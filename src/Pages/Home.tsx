@@ -4,9 +4,8 @@ import { getPokemonIndexFromUrl } from "../utils/Pokemon";
 import PokemonCardLading from "../Components/PokemonCardLading";
 
 const Home = () => {
-  const { data, isError, isLoading, error } = usePokemon();
-  console.log(data, isError, isLoading, error);
-
+  const { changePage, isError, isLoading, data, error } = usePokemon();
+  console.log(data?.next, data?.previous);
   if (isLoading)
     return (
       <div className="flex items-center justify-center h-screen">
@@ -32,7 +31,12 @@ const Home = () => {
         </div>
       </header>
       <main className="flex  items-center px-4 ">
-        <button disabled={!!data?.previous} className="btn">
+        <button
+          onClick={() => {
+            changePage(data?.previous ?? "");
+          }}
+          disabled={!data?.previous}
+          className="btn">
           prev
         </button>
 
@@ -46,7 +50,12 @@ const Home = () => {
             );
           })}
         </ul>
-        <button disabled={!!data?.next} className="btn">
+        <button
+          onClick={() => {
+            changePage(data?.next ?? "");
+          }}
+          disabled={!data?.next}
+          className="btn">
           next
         </button>
       </main>

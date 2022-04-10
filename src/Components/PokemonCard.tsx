@@ -22,7 +22,7 @@ const PokemonCard = ({ name, url, id }: Props) => {
       style={{
         backgroundColor: backgroundColor(rgb),
       }}
-      className={`flex flex-col items-center p-6 py-2 gap-4  min-w-[260px] w-[320px] rounded-md`}>
+      className={`flex flex-col items-center p-6 py-3 gap-5  min-w-[260px] w-[320px] rounded-md`}>
       <div className=" h-[250px] ">
         <img src={generateImageUrl(id)} alt={name} className="block w-full" />
       </div>
