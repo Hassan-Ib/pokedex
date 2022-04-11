@@ -1,6 +1,6 @@
 import React from "react";
 
-const PokemonCardLading = () => {
+const PokemonCardLoading = () => {
   return (
     <div className="animate-pulse shadow border border-slate-800 flex flex-col items-center p-8 py-2 gap-4 min-w-[260px] w-[320px] rounded-md">
       {/* image */}
@@ -13,4 +13,4 @@ const PokemonCardLading = () => {
   );
 };
 
-export default PokemonCardLading;
+export default PokemonCardLoading;
