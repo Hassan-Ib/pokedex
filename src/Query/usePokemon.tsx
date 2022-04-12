@@ -1,13 +1,19 @@
 import React from "react";
+import { useQuery } from "react-query";
 import axios from "./axios";
 
-type Props = {};
+// type PokemonInfo : {
 
+// }
 const fetchPokemon = (pokemonId: string | number) =>
-  axios.get(`/pokemon/${pokemonId}`);
+  axios.get(`/pokemon/${pokemonId}`).then((res) => res.data);
 
-const usePokemon = () => {
-  return <div>usePokemon</div>;
+type Props = {
+  pokemonId: string;
+};
+
+const usePokemon = ({ pokemonId }: Props) => {
+  return useQuery(["pokemon", pokemonId], () => fetchPokemon(pokemonId));
 };
 
 export default usePokemon;

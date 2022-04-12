@@ -12,7 +12,7 @@ export default function usePokemons() {
   const queryClient = useQueryClient();
   const [pageUrl, setPageUrl] = useLocalStorage("pokePage", "pokemon?limit=20");
   const { data, isError, isLoading, error } = useQuery(
-    ["pokemon", pageUrl],
+    ["pokemons", pageUrl],
     () => fetchPokemon(pageUrl),
     {
       keepPreviousData: true,
