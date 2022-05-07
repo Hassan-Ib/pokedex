@@ -5,12 +5,16 @@ import { useLocalStorage } from "usehooks-ts";
 
 import axios from "./axios";
 
+const POKEMON_LIMIT_PER_PAGE = 10;
 const fetchPokemon = (url: string): Promise<TPokemonData> =>
   axios.get(url).then((res) => res.data);
 
 export default function usePokemons() {
   const queryClient = useQueryClient();
-  const [pageUrl, setPageUrl] = useLocalStorage("pokePage", "pokemon?limit=20");
+  const [pageUrl, setPageUrl] = useLocalStorage(
+    "pokePage",
+    `pokemon?limit=${POKEMON_LIMIT_PER_PAGE}`
+  );
   const { data, isError, isLoading, error } = useQuery(
     ["pokemons", pageUrl],
     () => fetchPokemon(pageUrl),
