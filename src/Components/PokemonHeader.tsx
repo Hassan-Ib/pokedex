@@ -1,8 +1,10 @@
 import useModal from "../Query/useModal";
 import { BiSearch } from "react-icons/bi";
 import Search from "./Search";
+import Modal from "./Modal";
+
 const PokemonHeader = () => {
-  const { isModalOpen, openModal, closeModal } = useModal();
+  const { openModal, isModalOpen, closeModal } = useModal();
   // const;
   return (
     <header className="flex justify-between items-center p-4">
@@ -15,18 +17,28 @@ const PokemonHeader = () => {
       </div>
       <div>
         <button
+          aria-label="search pokemon"
           onClick={() => {
             openModal();
           }}
-          className=" shadow-inner bg-gray-100 border border-black flex gap-1 items-center rounded-3xl px-4 py-2 justify-start opacity-50"
+          className=" shadow-inner bg-gray-100 border border-black flex gap-1 items-center rounded-3xl px-4 py-1 justify-start opacity-50"
         >
-          <BiSearch className="mt-1 opacity-80" />{" "}
+          <BiSearch aria-label="search icon" className="mt-1 opacity-80" />{" "}
           <span className=""> search </span>
-          <span className="text-[11px] border border-black ml-5 p-[3px] rounded bg-gray-50">
+          <span
+            aria-label="keyboard shortcut to open seacrh - control or command key + k key "
+            className="text-[9px] border border-black ml-5 p-[2px] rounded bg-gray-50"
+          >
             Cltr K
           </span>
         </button>
-        <Search />
+        <Modal
+          openModal={openModal}
+          isModalOpen={isModalOpen}
+          closeModal={closeModal}
+        >
+          <Search closeModal={closeModal} />
+        </Modal>
       </div>
     </header>
   );
