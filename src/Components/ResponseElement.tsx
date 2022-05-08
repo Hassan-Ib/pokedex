@@ -1,5 +1,9 @@
 import React from "react";
-import { FaSlackHash } from "react-icons/fa";
+// import { FaSlackHash } from "react-icons/fa";
+// import { CgPokemon } from "react-icons/cg";
+// import { MdCatchingPokemon } from "react-icons/md";
+// import { SiPokemon } from "react-icons/si";
+import { GiPokerHand } from "react-icons/gi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 type Props = {
@@ -8,19 +12,26 @@ type Props = {
 
 const ResponseElement = ({ responseValue }: Props) => {
   return (
-    <a
-      href="#"
-      onMouseEnter={(e) => {
-        console.log("hover");
-        // e.currentTarget.focus();
-      }}
-      className="group outline-none border border-black/60 rounded-md flex items-center gap-2 py-2 w-full px-3 focus:bg-blue-500 focus:border-blue-500  focus:text-white"
-    >
-      {" "}
-      <FaSlackHash className="border border-black group-focus:border-white group-hover:border-white p-1 text-2xl rounded" />
-      <span className="flex-1 text-lg font-bold"> {responseValue}</span>
-      <MdKeyboardArrowRight />
-    </a>
+    <>
+      <label htmlFor="search" className="absolute invisible"></label>
+      <a
+        id="search"
+        href="#"
+        onMouseEnter={(e) => {
+          console.log("hover");
+          // e.currentTarget.focus();
+        }}
+        className="group outline-none  bg-blue-500/70 text-white rounded-md flex items-center gap-3 py-3 w-full px-4 focus:bg-blue-500"
+      >
+        {" "}
+        <GiPokerHand className="animate-bounce group-focus:border-white group-hover:border-white font-thin text-2xl  rounded" />
+        <span className="flex-1 text-lg font-semibold tracking-wider ">
+          {" "}
+          {responseValue}
+        </span>
+        <MdKeyboardArrowRight />
+      </a>
+    </>
   );
 };
 

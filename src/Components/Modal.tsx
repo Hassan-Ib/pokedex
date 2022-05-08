@@ -61,11 +61,11 @@ const Modal = ({ isModalOpen, closeModal, openModal, children }: Props) => {
   });
 
   React.useEffect(() => {
+    if (!isModalOpen || !modalNode) return;
+    // if modal is not open or modalNode is not defined
     const lastActiveBeforeModal = document.activeElement as HTMLElement;
 
-    // if modal is not open or modalNode is not defined
-    if (!isModalOpen || !modalNode) return;
-
+    document.body.classList.add("fix-height");
     let handleTrapFocus: (e: KeyboardEvent) => void;
 
     // get all focusable elements in modal
@@ -87,6 +87,7 @@ const Modal = ({ isModalOpen, closeModal, openModal, children }: Props) => {
       }
       // remove trap focus when modal is closed
       document.removeEventListener("keydown", handleTrapFocus);
+      document.body.classList.remove("fix-height");
     };
   });
 

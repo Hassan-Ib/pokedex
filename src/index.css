@@ -42,4 +42,8 @@
     z-index: 10;
     visibility: visible;
   }
+  .fix-height {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
