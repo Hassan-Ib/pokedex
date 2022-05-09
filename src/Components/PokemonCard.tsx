@@ -31,48 +31,38 @@ const PokemonCard = ({ name, url, id }: Props) => {
   }, []);
 
   return (
-    <article
+    <Link
       style={{
         backgroundColor: backgroundColor(rgb),
       }}
-      className={`flex flex-col items-center p-4  gap-4 w-[320px] rounded-3xl transition-all duration-500 overflow-hidden`}
+      to={`/pokemon/${id}`}
+      className={`flex flex-col p-4 gap-4 w-full sm:w-[260px] md:w-[300px] rounded-3xl transition-all duration-500 overflow-hidden`}
     >
-      <Link to={`/pokemon/${id}`} className="flex ">
-        <h1 className="text-white self-start text-lg py-1 rounded-md font-bold uppercase tracking-widest relative z-10">
+      <article className="flex ">
+        <h1 className="text-white self-start text-lg py-1 rounded-md font-bold uppercase tracking-widest relative z-10 ">
           {name}
         </h1>
         <figure className="relative flex-1">
           <img
             src={generateImageUrl(id)}
             alt={name}
-            className="block h-[150px] relative z-10"
+            className="block h-[150px] sm:h-[120px] md:h-[150px] relative z-10"
           />
           <CgPokemon className="absolute text-[24rem] bottom-0 opacity-40  right-0" />
-          {/* <figcaption>
-            <h1
-              style={{
-                backgroundColor: oppositebackgroundColor,
-                borderColor: oppositebackgroundColor,
-              }}
-              className="text-white text-xl px-4 py-1 rounded-md text-center font-extrabold uppercase tracking-widest"
-            >
-              {name}
-            </h1>
-          </figcaption> */}
         </figure>
-      </Link>
 
-      {/* <button
+        {/* <button
         style={{
           backgroundColor: oppositebackgroundColor,
           borderColor: oppositebackgroundColor,
         }}
         onClick={() => navigate(`/pokemon/${id}`)}
         className=" animate-bounce px-4 py-2 tracking-widest rounded-3xl border shadow-lg border-white text-white font-medium capitalize"
-      >
+        >
         about
       </button> */}
-    </article>
+      </article>
+    </Link>
   );
 };
 

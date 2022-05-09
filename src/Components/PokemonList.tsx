@@ -9,7 +9,7 @@ const PokemonList = ({ result }: { result: TPokemon[] }) => {
   // console.log(result);
   return (
     <section className="">
-      <ul className=" py-6 pt-2 flex w-[90%] max-w-5xl overflow-auto mx-auto  gap-6">
+      <ul className="md:scroll-effect py-6 pt-2 flex w-[95%] max-w-5xl flex-wrap md:flex-nowrap  justify-center md:justify-start md:overflow-auto mx-auto  gap-6">
         {result.map((pokemon) => {
           const id = getPokemonIndexFromUrl(pokemon.url);
           return (
