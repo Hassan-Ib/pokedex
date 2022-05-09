@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer components {
+  .main {
+    background-image: linear-gradient(105deg, #fff 45%, transparent 45%),
+      url("./assets/images/background/pokemon-background-2.webp") no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+} */
+
 @layer utilities {
   .btn {
     @apply px-4 py-1 bg-gray-700 text-white capitalize rounded-md;
@@ -45,5 +55,14 @@
   .fix-height {
     height: 100vh;
     overflow: hidden;
+  }
+  .close-modal > .children {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  .close-modal.open-modal > .children {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 200ms ease-in, opacity 200ms ease-in;
   }
 }

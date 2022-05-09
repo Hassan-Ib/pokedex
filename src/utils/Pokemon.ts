@@ -5,4 +5,4 @@ export const getPokemonIndexFromUrl = (url: string): string => {
 };
 
 export const generateImageUrl = (id: string) =>
-  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${id}.png`;
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;

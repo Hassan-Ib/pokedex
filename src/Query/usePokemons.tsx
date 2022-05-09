@@ -20,7 +20,7 @@ export default function usePokemons() {
     () => fetchPokemon(pageUrl),
     {
       keepPreviousData: true,
-      staleTime: 5000,
+      staleTime: Infinity,
     }
   );
 
@@ -30,6 +30,7 @@ export default function usePokemons() {
 
   // console.log(data);
 
+  // prefetch next page
   useEffect(() => {
     if (data?.next) {
       queryClient.prefetchQuery(["pokemon", data?.next], () =>

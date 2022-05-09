@@ -103,7 +103,7 @@ const Modal = ({ isModalOpen, closeModal, openModal, children }: Props) => {
         onClick={closeModal}
         className="overlay absolute inset-0 bg-black/30"
       ></div>
-      {children}
+      <div className="children ">{children}</div>
     </section>,
     modalNode
   );

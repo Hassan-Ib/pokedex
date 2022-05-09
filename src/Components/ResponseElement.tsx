@@ -13,9 +13,7 @@ type Props = {
 const ResponseElement = ({ responseValue }: Props) => {
   return (
     <>
-      <label htmlFor="search" className="absolute invisible"></label>
       <a
-        id="search"
         href="#"
         onMouseEnter={(e) => {
           console.log("hover");

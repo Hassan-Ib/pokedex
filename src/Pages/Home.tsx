@@ -3,6 +3,7 @@ import PokemonHeader from "../Components/PokemonHeader";
 import PokemonListLoading from "../Components/Loading/PokemonListLoading";
 import PokemonList from "../Components/PokemonList";
 import NavigationBtn from "../Components/NavigationBtn";
+import { BsInfoCircle } from "react-icons/bs";
 const Home = () => {
   const { changePage, isError, isLoading, data, error } = usePokemons();
   // console.log(data?.next, data?.previous);
@@ -29,20 +30,25 @@ const Home = () => {
   }
 
   return (
-    <main className="bg-slate-100 flex items-center justify-around py-2  px-4 gap-2 ">
-      <NavigationBtn
-        onClick={() => changePage(data.previous)}
-        disabled={!data.previous}
-        navigate="prev"
-        className=" fixed top-1/2 -translate-y-1/2 left-4"
-      />
+    <main className="main h-[100vh] overflow-auto px-4">
+      <PokemonHeader />
+      <section className="mt-16 max-w-xl mx-auto">
+        <article className="text-center lg:text-left flex flex-col gap-6  items-center lg:items-start">
+          <h2 className="text-5xl md:text-6xl font-semibold">
+            Gotta Catch 'Em All!
+          </h2>
+          <p>
+            Pokemons, akas Pucket Monsters in Japan, is a Japanesse media
+            franchise managed by the Pokémons Company, a company founded by
+            Nintendo
+          </p>
+          <button className="flex lg:self-start items-center font-semibold gap-2 bg-black text-white px-4 py-2 rounded-md">
+            {" "}
+            <BsInfoCircle /> More information
+          </button>
+        </article>
+      </section>
       <PokemonList result={data.results} />
-      <NavigationBtn
-        onClick={() => changePage(data.next)}
-        disabled={!data.next}
-        navigate="next"
-        className=" fixed top-1/2 -translate-y-1/2 right-4"
-      />
     </main>
   );
 };
