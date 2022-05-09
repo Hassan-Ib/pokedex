@@ -32,8 +32,8 @@ const Home = () => {
   return (
     <main className="main h-[100vh] overflow-auto px-4">
       <PokemonHeader />
-      <section className="mt-16 max-w-xl mx-auto">
-        <article className="text-center lg:text-left flex flex-col gap-6  items-center lg:items-start">
+      <section className="mt-16 max-w-xl mx-auto mb-16">
+        <article className="text-center lg:text-left flex flex-col gap-8  items-center lg:items-start">
           <h2 className="text-5xl md:text-6xl font-semibold">
             Gotta Catch 'Em All!
           </h2>
