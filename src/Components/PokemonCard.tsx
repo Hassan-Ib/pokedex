@@ -46,7 +46,7 @@ const PokemonCard = ({ name, url, id }: Props) => {
           <img
             src={generateImageUrl(id)}
             alt={name}
-            className="block h-[100px] md:h-[150px] relative z-10"
+            className="block h-[130px] md:h-[150px] relative z-10"
           />
           <CgPokemon className="absolute text-[24rem] bottom-0 opacity-40  right-0" />
         </figure>
