@@ -12,7 +12,7 @@ const PokemonHeader = () => {
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/640px-International_Pok%C3%A9mon_logo.svg.png"
           alt="pokemon logo"
-          className="w-full h-[45px] sm:h-[65px] min-w-[150px]"
+          className="w-full h-[48px] sm:h-[65px] min-w-[150px] object-contain object-left"
         />
       </div>
       <div>
