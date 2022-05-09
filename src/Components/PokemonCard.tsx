@@ -23,12 +23,12 @@ const PokemonCard = ({ name, url, id }: Props) => {
   const opposite = oppositeRgb(rgb);
 
   const oppositebackgroundColor = backgroundColor(opposite);
-  React.useEffect(() => {
-    axios(`pokemon/${id}`).then((res) => {
-      const data = res.data;
-      console.log(data);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   axios(`pokemon/${id}`).then((res) => {
+  //     const data = res.data;
+  //     console.log(data);
+  //   });
+  // }, []);
 
   return (
     <Link
@@ -36,31 +36,20 @@ const PokemonCard = ({ name, url, id }: Props) => {
         backgroundColor: backgroundColor(rgb),
       }}
       to={`/pokemon/${id}`}
-      className={`flex flex-col p-4 gap-4 w-full sm:w-[260px] md:w-[300px] rounded-3xl transition-all duration-500 overflow-hidden`}
+      className={`flex flex-col p-4 gap-4 w-[250px] md:w-[300px] rounded-3xl transition-all duration-500 overflow-hidden`}
     >
       <article className="flex ">
-        <h1 className="text-white self-start text-lg py-1 rounded-md font-bold uppercase tracking-widest relative z-10 ">
+        <h1 className="text-white self-start text-base sm:text-lg py-1 rounded-md font-bold uppercase tracking-widest relative z-10 ">
           {name}
         </h1>
         <figure className="relative flex-1">
           <img
             src={generateImageUrl(id)}
             alt={name}
-            className="block h-[150px] sm:h-[120px] md:h-[150px] relative z-10"
+            className="block h-[100px] md:h-[150px] relative z-10"
           />
           <CgPokemon className="absolute text-[24rem] bottom-0 opacity-40  right-0" />
         </figure>
-
-        {/* <button
-        style={{
-          backgroundColor: oppositebackgroundColor,
-          borderColor: oppositebackgroundColor,
-        }}
-        onClick={() => navigate(`/pokemon/${id}`)}
-        className=" animate-bounce px-4 py-2 tracking-widest rounded-3xl border shadow-lg border-white text-white font-medium capitalize"
-        >
-        about
-      </button> */}
       </article>
     </Link>
   );
