@@ -36,14 +36,14 @@ const PokemonCard = ({ name, url, id }: Props) => {
         backgroundColor: backgroundColor(rgb),
       }}
       to={`/pokemon/${id}`}
-      className={`flex flex-col p-4 gap-4 max-w-[300px] min-w-[260px] sm:w-[270px] mx-auto md:w-[300px] rounded-3xl transition-all duration-500 overflow-hidden`}
+      className={`flex flex-col p-4 gap-4 max-w-[300px] min-w-[260px] sm:w-[270px] mx-auto rounded-3xl transition-all duration-500 overflow-hidden`}
     >
       <article className="flex ">
         <h1
           style={{
             backgroundColor: oppositebackgroundColor,
           }}
-          className="text-white px-2 py-1 text-base self-start sm:text-lg rounded-md font-bold uppercase tracking-widest relative z-10 "
+          className="text-white px-2 py-1 text-base self-start rounded-md font-bold uppercase tracking-widest relative z-10 "
         >
           {name}
         </h1>
@@ -51,7 +51,7 @@ const PokemonCard = ({ name, url, id }: Props) => {
           <img
             src={generateImageUrl(id)}
             alt={name}
-            className="block h-[150px] sm:h-[120px] md:h-[150px] relative z-10"
+            className="block h-[150px] sm:h-[120px] md:h-[120px] relative z-10"
           />
           <CgPokemon className="absolute text-[24rem] bottom-0 opacity-40  right-0" />
         </figure>

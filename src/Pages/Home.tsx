@@ -4,6 +4,7 @@ import PokemonListLoading from "../Components/Loading/PokemonListLoading";
 import PokemonList from "../Components/PokemonList";
 import NavigationBtn from "../Components/NavigationBtn";
 import { BsInfoCircle } from "react-icons/bs";
+import background_1 from "../assets/images/background/pokemon-background-1.webp";
 const Home = () => {
   const { changePage, isError, isLoading, data, error } = usePokemons();
   // console.log(data?.next, data?.previous);
@@ -30,9 +31,20 @@ const Home = () => {
   }
 
   return (
-    <main className="main lg:h-[100vh] overflow-auto px-4">
+    <main className="main relative lg:h-[100vh] overflow-auto px-4">
+      <section className="absolute inset-0 hidden lg:flex -z-20">
+        <div className="basis-[55%] bg-white"></div>
+        <div className="bg-clip basis-[60%] bg-[#6284d8]">
+          <img
+            src={background_1}
+            alt="pokemon background"
+            className="w-full h-full object-contain object-center"
+          />
+          {/* <img src="" alt="" /> */}
+        </div>
+      </section>
       <PokemonHeader />
-      <section className="mt-16 max-w-xl mx-auto mb-16">
+      <section className="mt-16 max-w-xl mx-auto mb-16 lg:mx-px">
         <article className="text-center lg:text-left flex flex-col gap-8  items-center lg:items-start">
           <h2 className="text-5xl md:text-6xl font-semibold">
             Gotta Catch 'Em All!

@@ -64,4 +64,8 @@
     transform: translateY(0);
     transition: transform 200ms ease-in, opacity 200ms ease-in;
   }
+  .bg-clip {
+    clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+    /* margin-left: -10px; */
+  }
 }
