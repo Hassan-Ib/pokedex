@@ -23,12 +23,12 @@ const PokemonCard = ({ name, url, id }: Props) => {
   const opposite = oppositeRgb(rgb);
 
   const oppositebackgroundColor = backgroundColor(opposite);
-  React.useEffect(() => {
-    axios(`pokemon/${id}`).then((res) => {
-      const data = res.data;
-      console.log(data);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   axios(`pokemon/${id}`).then((res) => {
+  //     const data = res.data;
+  //     console.log(data);
+  //   });
+  // }, []);
 
   return (
     <Link
@@ -36,10 +36,15 @@ const PokemonCard = ({ name, url, id }: Props) => {
         backgroundColor: backgroundColor(rgb),
       }}
       to={`/pokemon/${id}`}
-      className={`flex flex-col p-4 gap-4 w-full sm:w-[260px] md:w-[300px] rounded-3xl transition-all duration-500 overflow-hidden`}
+      className={`flex flex-col p-4 gap-4 max-w-[300px] min-w-[260px] sm:w-[270px] mx-auto md:w-[300px] rounded-3xl transition-all duration-500 overflow-hidden`}
     >
       <article className="flex ">
-        <h1 className="text-white self-start text-lg py-1 rounded-md font-bold uppercase tracking-widest relative z-10 ">
+        <h1
+          style={{
+            backgroundColor: oppositebackgroundColor,
+          }}
+          className="text-white px-2 py-1 text-base self-start sm:text-lg rounded-md font-bold uppercase tracking-widest relative z-10 "
+        >
           {name}
         </h1>
         <figure className="relative flex-1">
