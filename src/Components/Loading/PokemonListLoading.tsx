@@ -2,17 +2,13 @@ import PokemonCardLoading from "./PokemonCardLoading";
 
 const PokemonListLoading = () => {
   return (
-    <main className="grid grid-flow-col items-center justify-between px-4 w-full border-2 border-red-500">
-      <button disabled={true} className="btn">
-        prev
-      </button>
-      <ul className="py-6 h-[400px] col-start-3  flex flex-wrap w-[90%] max-w-3xl mx-auto justify-center items-center gap-8">
+    <main className="">
+      <ul className="md:scroll-effect py-6 pt-2 flex flex-col sm:flex-row w-[95%] max-w-5xl flex-wrap md:flex-nowrap  sm:justify-center items-stretch md:justify-start md:overflow-auto mx-auto  gap-6">
+        <PokemonCardLoading />
+        <PokemonCardLoading />
         <PokemonCardLoading />
         <PokemonCardLoading />
       </ul>
-      <button disabled={true} className="btn">
-        next
-      </button>
     </main>
   );
 };
