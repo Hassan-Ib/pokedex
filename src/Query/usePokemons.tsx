@@ -13,7 +13,7 @@ const initalPath = { page: 1, skip: 0, limit: POKEMON_LIMIT_PER_PAGE };
 // getting data from useQueryClient
 
 const usePokemonsQuery = () => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   // keep track of the current page
   const [pageData, setPageData] = useLocalStorage("pokePageData", {
