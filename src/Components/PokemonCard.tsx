@@ -31,7 +31,6 @@ const PokemonCard = ({ name, url, id }: TPokemon & { id: string }) => {
           return ability.name;
         })
         .slice(0, 2);
-      console.log(abilities);
       setAbilities(abilities);
     });
   }, []);

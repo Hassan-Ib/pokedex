@@ -7,7 +7,6 @@ import { BsInfoCircle } from "react-icons/bs";
 import PokemonIntroCard from "../Components/PokemonIntroCard";
 const Home = () => {
   const { page, isError, isLoading, data, error } = usePokemons();
-  // console.log(page?.next, page?.previous);
 
   if (isLoading)
     return (
@@ -20,7 +19,6 @@ const Home = () => {
 
   // || !data for type narrowing and handling error state
   if (isError || !data) {
-    // console.log(error, data);
     return (
       <div className="h-screen flex flex-col justify-center items-center ">
         <PokemonHeader />

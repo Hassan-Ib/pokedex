@@ -10,11 +10,8 @@ const fetchPokemon = (url: string): Promise<TPokemonData> =>
   axios.get(url).then((res) => res.data);
 
 const initalPath = { page: 1, skip: 0, limit: POKEMON_LIMIT_PER_PAGE };
-// getting data from useQueryClient
 
 const usePokemonsQuery = () => {
-  // const queryClient = useQueryClient();
-
   // keep track of the current page
   const [pageData, setPageData] = useLocalStorage("pokePageData", {
     page: 1,
@@ -22,7 +19,6 @@ const usePokemonsQuery = () => {
     limit: POKEMON_LIMIT_PER_PAGE,
   });
 
-  // console.log("pageData", pageData);
   // fetching all pokemons into cache
   const { isLoading, data: pokemon, error, isError } = usePokemonsCache();
 

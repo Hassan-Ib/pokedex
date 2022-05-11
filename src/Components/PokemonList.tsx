@@ -6,7 +6,6 @@ import PokemonCard from "./PokemonCard";
 // import background_3 from "../assets/images/background/pokemon-background-3.png";
 // import background_4 from "../assets/images/background/pokemon-background-4.png";
 const PokemonList = ({ result }: { result: TPokemon[] }) => {
-  console.log(result);
   return (
     <section className="">
       <ul className="md:scroll-effect py-6 pt-2 flex flex-col sm:flex-row w-[95%] max-w-5xl flex-wrap md:flex-nowrap  sm:justify-center items-stretch md:justify-start md:overflow-auto mx-auto  gap-6">

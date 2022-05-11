@@ -13,13 +13,11 @@ const Modal = ({ isModalOpen, closeModal, openModal, children }: Props) => {
   function handleKeyDownOpenModal(e: KeyboardEvent) {
     if (e.ctrlKey && e.code === "KeyK") {
       e.preventDefault();
-      // console.log("control + l");
       openModal();
     }
   }
 
   function handleKeyDowncloseModal(e: KeyboardEvent) {
-    // console.log("keydown", e.key);
     if (e.key === "Escape" && isModalOpen) {
       closeModal();
     }
