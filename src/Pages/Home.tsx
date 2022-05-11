@@ -42,11 +42,11 @@ const Home = () => {
           disabled={!page.previous}
           onClick={page.toPrevPage}
         />
-        <span className="text-lg font-medium border border-black/40 px-3 py-1">
+        <span className="text-lg font-medium  px-3 py-1">
           {page.currentPage}
         </span>
         <span className="text-lg font-medium"> of </span>
-        <span className="text-lg font-medium border border-black/40 px-3 py-1">
+        <span className="text-lg font-medium  px-3 py-1">
           {page.pages_Left}
         </span>
         <NavigationBtn

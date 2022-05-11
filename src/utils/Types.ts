@@ -1,8 +1,10 @@
 export type TPokemon = {
   name: string;
   url: string;
-  // id: string;
+  // id: number;
 };
+
+export type TpokemonAbility = TPokemon;
 
 export type TPageUrl = string | null;
 

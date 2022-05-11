@@ -21,8 +21,10 @@ const NavigationBtn = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`btn ${className}`}>
-      {matchesMedia ? navigate : btnValue}
+      className={`btn ${className}`}
+    >
+      {/* {matchesMedia ? navigate : btnValue} */}
+      {navigate}
     </button>
   );
 };
