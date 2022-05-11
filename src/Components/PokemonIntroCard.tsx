@@ -1,7 +1,7 @@
 import { BsInfoCircle } from "react-icons/bs";
 
 const PokemonIntroCard = () => (
-  <section className="mt-16 max-w-xl mx-auto mb-16">
+  <section className="max-w-xl mx-auto my-16">
     <article className="text-center flex flex-col gap-8  items-center ">
       <h2 className="text-5xl md:text-6xl font-semibold">
         Gotta Catch 'Em All!

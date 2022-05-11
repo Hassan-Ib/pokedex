@@ -1,7 +1,9 @@
 import { useQuery } from "react-query";
 import axios from "./axios";
 
-// type PokemonInfo : {
+// type PokemonInfo = {
+//   name: string;
+//   url: string;
 
 // }
 const fetchPokemon = (pokemonId: string | number) =>
