@@ -1,6 +1,7 @@
 export type TPokemon = {
   name: string;
   url: string;
+  // id: string;
 };
 
 export type TPageUrl = string | null;

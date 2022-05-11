@@ -6,8 +6,8 @@ import NavigationBtn from "../Components/NavigationBtn";
 import { BsInfoCircle } from "react-icons/bs";
 import PokemonIntroCard from "../Components/PokemonIntroCard";
 const Home = () => {
-  const { changePage, isError, isLoading, data, error } = usePokemons();
-  // console.log(data?.next, data?.previous);
+  const { page, isError, isLoading, data, error } = usePokemons();
+  // console.log(page?.next, page?.previous);
 
   if (isLoading)
     return (
@@ -20,7 +20,7 @@ const Home = () => {
 
   // || !data for type narrowing and handling error state
   if (isError || !data) {
-    console.log(error, data);
+    // console.log(error, data);
     return (
       <div className="h-screen flex flex-col justify-center items-center ">
         <PokemonHeader />
@@ -32,10 +32,29 @@ const Home = () => {
   }
 
   return (
-    <main className="main lg:h-[100vh] overflow-auto px-4">
+    <main className="main lg:h-[100vh] overflow-auto px-4 pb-4">
       <PokemonHeader />
       <PokemonIntroCard />
-      <PokemonList result={data.results} />
+      <PokemonList result={data} />
+      <div className="flex gap-2 justify-center items-center mt-6">
+        <NavigationBtn
+          navigate="prev"
+          disabled={!page.previous}
+          onClick={page.toPrevPage}
+        />
+        <span className="text-lg font-medium border border-black/40 px-3 py-1">
+          {page.currentPage}
+        </span>
+        <span className="text-lg font-medium"> of </span>
+        <span className="text-lg font-medium border border-black/40 px-3 py-1">
+          {page.pages_Left}
+        </span>
+        <NavigationBtn
+          navigate="next"
+          disabled={!page.next}
+          onClick={page.toNextPage}
+        />
+      </div>
     </main>
   );
 };

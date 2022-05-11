@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { randomRgba, oppositeRgb } from "../utils/Theme";
 import axios from "../Query/axios";
 import { CgPokemon } from "react-icons/cg";
-type Props = {
+export type Props = {
   name: string;
   url: string;
   id: string;
@@ -43,7 +43,7 @@ const PokemonCard = ({ name, url, id }: Props) => {
           style={{
             backgroundColor: oppositebackgroundColor,
           }}
-          className="text-white px-2 py-1 text-base self-start sm:text-lg rounded-md font-bold uppercase tracking-widest relative z-10 "
+          className="text-white px-2 py-1 text-base self-start rounded-md font-bold uppercase tracking-widest relative z-10 "
         >
           {name}
         </h1>
