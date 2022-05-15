@@ -28,7 +28,7 @@ const Search = (props: Props) => {
         <AiOutlineSearch className="  text-2xl opacity-50 mt-1" />{" "}
         <label htmlFor="search" className="absolute invisible"></label>
         <input
-          className=" w-full text-xl foucs:outline-none outline-none placeholder:text-lg placeholder:tracking-wider"
+          className=" w-full text-xl lowercase foucs:outline-none outline-none placeholder:text-lg placeholder:tracking-wider"
           type="text"
           name="pokemon"
           id="search"
