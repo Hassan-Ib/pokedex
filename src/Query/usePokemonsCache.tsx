@@ -1,6 +1,6 @@
 import axios from "./axios";
 import React from "react";
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 // type Props = {};
 const url = "pokemon?limit=100000&offset=0";
 

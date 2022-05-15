@@ -12,6 +12,7 @@ const useSearchPokemon = () => {
   };
 
   useEffect(() => {
+    // console.log()
     if (searchInput === "") {
       setSearchResults([]);
       return;
@@ -19,8 +20,9 @@ const useSearchPokemon = () => {
 
     if (pokemons && pokemons.results) {
       const results = pokemons.results.filter((pokemon: TPokemon) => {
-        return pokemon.name.startsWith(searchInput);
+        return pokemon.name.startsWith(searchInput.toLowerCase());
       });
+      console.log("result", results, "search input", searchInput);
       setSearchResults(results);
     }
   }, [searchInput, pokemons]);

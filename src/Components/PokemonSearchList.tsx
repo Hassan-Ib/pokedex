@@ -16,7 +16,6 @@ const PokemonSearchList = ({ results }: Props) => {
               <ResponseElement responseValue={pokeName.name} />
             </li>
           ))}
-          )
         </ul>
       ) : (
         <div className="h-32 flex items-center justify-center">
