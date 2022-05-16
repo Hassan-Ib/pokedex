@@ -17,7 +17,6 @@ const ResponseElement = ({ responseValue }: Props) => {
         href="#"
         onMouseEnter={(e) => {
           console.log("hover");
-          // e.currentTarget.focus();
         }}
         className="group outline-none  bg-blue-500/70 text-white rounded-md flex items-center gap-3 py-3 w-full px-4 focus:bg-blue-500"
       >
