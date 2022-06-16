@@ -64,4 +64,15 @@
     transform: translateY(0);
     transition: transform 200ms ease-in, opacity 200ms ease-in;
   }
+  .active-link {
+    position: relative;
+  }
+  .active-link::after {
+    @apply bg-white/80 left-1/2 -translate-x-1/2;
+    position: absolute;
+    content: " ";
+    bottom: 0;
+    width: 50%;
+    height: 2px;
+  }
 }

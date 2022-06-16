@@ -4,7 +4,7 @@ import axios from "./axios";
 const fetchPokemon = (pokemonId: string | number) =>
   axios.get(`/pokemon/${pokemonId}`).then((res) => res.data);
 
-const usePokemon = (pokemonId: string = "") => {
+const usePokemon = (pokemonId: string) => {
   return useQuery(["pokemon", pokemonId], () => fetchPokemon(pokemonId));
 };
 

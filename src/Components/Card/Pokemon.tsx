@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { generateImageUrl } from "../utils/Pokemon";
+import { generateImageUrl } from "../../utils/generateImageUrl";
 import { Link } from "react-router-dom";
-import { randomRgba, oppositeRgb } from "../utils/Theme";
-import axios from "../Query/axios";
-import type { TPokemon, TpokemonAbility } from "../utils/Types";
+import RandomRgbColor from "../../utils/randomColor";
+import axios from "../../Query/axios";
+import type { TPokemon, TPokemonAbility } from "../../utils/Types";
 import { CgPokemon } from "react-icons/cg";
 export type Props = {
   name: string;
@@ -12,22 +12,16 @@ export type Props = {
   id: string;
 };
 
-const bgWithOpacity = ([r, g, b, a]: number[]) => `rgba(${r},${g},${b},${a})`;
-
-const backgroundColor = ([r, g, b]: number[]) => `rgb(${r},${g},${b})`;
-
 const PokemonCard = ({ name, url, id }: TPokemon & { id: string }) => {
-  const rgb = randomRgba();
-  const opposite = oppositeRgb(rgb);
-
-  const oppositebackgroundColor = backgroundColor(opposite);
   const [abilities, setAbilities] = React.useState<string[]>([]);
+  const randomColor = new RandomRgbColor();
+  const oppositebackgroundColor = randomColor.getLighterColor();
 
   React.useEffect(() => {
     axios(`pokemon/${id}`).then((res) => {
       const data = res.data;
       const abilities = data.abilities
-        .map(({ ability }: { ability: TpokemonAbility }) => {
+        .map(({ ability }: { ability: TPokemonAbility }) => {
           return ability.name;
         })
         .slice(0, 2);
@@ -38,19 +32,17 @@ const PokemonCard = ({ name, url, id }: TPokemon & { id: string }) => {
   return (
     <Link
       style={{
-        backgroundColor: backgroundColor(rgb),
+        backgroundColor: randomColor.getColor(),
       }}
       to={`/pokemon/${id}`}
-      className={`flex flex-col p-4 gap-4 max-w-[300px] min-w-[260px] sm:w-[270px] mx-auto md:w-[290px] rounded-3xl transition-all duration-500 overflow-hidden`}
-    >
+      className={`flex flex-col p-4 gap-4 max-w-[300px] min-w-[260px] sm:w-[270px] mx-auto md:w-[290px] rounded-3xl transition-all duration-500 overflow-hidden`}>
       <article className="flex ">
         <div className=" flex  flex-col gap-2 relative z-10">
           <h1
             style={{
               backgroundColor: oppositebackgroundColor,
             }}
-            className="text-white px-2 py-1 text-base self-start rounded-md font-bold uppercase tracking-widest "
-          >
+            className="text-white px-2 py-1 text-base self-start rounded-md font-bold uppercase tracking-widest ">
             {name}
           </h1>
 
@@ -60,8 +52,7 @@ const PokemonCard = ({ name, url, id }: TPokemon & { id: string }) => {
               style={{
                 backgroundColor: oppositebackgroundColor,
               }}
-              className="text-white px-2 py-1 text-sm max-w-max rounded-xl  capitalize tracking-widest"
-            >
+              className="text-white px-2 py-1 text-sm max-w-max rounded-xl  capitalize tracking-widest">
               {ability}
             </h3>
           ))}

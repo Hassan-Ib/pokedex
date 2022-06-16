@@ -1,5 +1,5 @@
-import type { TPokemon } from "../utils/Types";
-import ResponseElement from "./ResponseElement";
+import type { TPokemon } from "../../utils/Types";
+import ResponseElement from "../ResponseElement";
 
 type Props = {
   results: TPokemon[];

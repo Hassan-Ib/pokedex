@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import useSearchPokemon from "../Query/useSearchPokemon";
-import PokemonSearchList from "./PokemonSearchList";
+import useSearchPokemon from "../../Query/useSearchPokemon";
+import PokemonSearchList from "./SearchList";
 const responseData = ["bladamur", "dragon", "markinru", "musakabi"];
 
 type Props = {
@@ -24,8 +24,7 @@ const Search = (props: Props) => {
       <form
         onSubmit={handleFormSubmit}
         name="search pokemon"
-        className=" border-b border-black/20  flex items-center  px-4 p-3 gap-2"
-      >
+        className=" border-b border-black/20  flex items-center  px-4 p-3 gap-2">
         <AiOutlineSearch className="  text-2xl opacity-50 mt-1" />{" "}
         <label htmlFor="search" className="absolute invisible"></label>
         <input
@@ -45,8 +44,7 @@ const Search = (props: Props) => {
           aria-label="escape search modal"
           onClick={() => {
             props.closeModal();
-          }}
-        >
+          }}>
           ESC
         </button>
       </form>

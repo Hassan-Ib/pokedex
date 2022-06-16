@@ -3,6 +3,3 @@ export const getPokemonIndexFromUrl = (url: string): string => {
   const len = splitedUrl.length;
   return splitedUrl[len - 2];
 };
-
-export const generateImageUrl = (id: string) =>
-  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;

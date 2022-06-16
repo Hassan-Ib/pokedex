@@ -1,10 +1,10 @@
 import usePokemons from "../Query/usePokemons";
-import PokemonHeader from "../Components/PokemonHeader";
-import PokemonListLoading from "../Components/Loading/PokemonListLoading";
-import PokemonList from "../Components/PokemonList";
+import PokemonHeader from "../Components/Header";
+import PokemonListLoading from "../Components/Loader/PokemonListLoading";
+import PokemonList from "../Components/Card/PokemonList";
 import NavigationBtn from "../Components/NavigationBtn";
 import { BsInfoCircle } from "react-icons/bs";
-import PokemonIntroCard from "../Components/PokemonIntroCard";
+import PokemonIntroCard from "../Components/Intro";
 const Home = () => {
   const { page, isError, isLoading, data, error } = usePokemons();
 

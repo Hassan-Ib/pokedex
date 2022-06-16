@@ -1,6 +1,6 @@
-import { getPokemonIndexFromUrl } from "../utils/Pokemon";
-import type { TPokemon } from "../utils/Types";
-import PokemonCard from "./PokemonCard";
+import { getPokemonIndexFromUrl } from "../../utils/Pokemon";
+import type { TPokemon } from "../../utils/Types";
+import PokemonCard from "./Pokemon";
 // import background_1 from "../assets/images/background/pokemon-background-1.webp";
 // import background_2 from "../assets/images/background/pokemon-background-2.webp";
 // import background_3 from "../assets/images/background/pokemon-background-3.png";
