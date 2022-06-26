@@ -20,19 +20,19 @@ const About = (props: Props) => {
     <div>
       <section className=" flex-col sm:flex-row flex gap-4 text-sm justify-center items-center bg-[hsl(329,100%,5%)] border border-red-400 rounded-xl font-semibold py-3 w-fit mx-auto px-4 my-6">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             <GiWeightScale className="text-red-400" />{" "}
-            {DecimeterConvertion.toMeter(height)} m |{" "}
-            {DecimeterConvertion.toFoot(height)} |
+            <span>{DecimeterConvertion.toMeter(height)} m | </span>
+            <span>{DecimeterConvertion.toFoot(height)} ft</span>
           </div>
           <div className=" capitalize opacity-75 text-center mt-1">height</div>
         </div>
         <div className="text-ceneter">_</div>
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             <FaRulerVertical className="text-red-400" />{" "}
-            {HextogramConvertion.toKilogram(weight)} kg |{" "}
-            {HextogramConvertion.toPounds(weight)} lbs |
+            <span>{HextogramConvertion.toKilogram(weight)} kg | </span>
+            <span>{HextogramConvertion.toPounds(weight)} lbs</span>
           </div>
           <div className=" capitalize opacity-75 text-center mt-1">weight</div>
         </div>

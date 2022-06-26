@@ -18,7 +18,7 @@ function App() {
           }
         />
         <Route
-          path="/pokemon/:id/*"
+          path="pokemon/:id/*"
           element={
             <React.Suspense fallback={<p>loading</p>}>
               <Pokemon />

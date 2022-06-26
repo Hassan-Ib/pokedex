@@ -5,18 +5,20 @@ import Stats from "./Stats";
 import { NotExist } from "./NotExist";
 import { InformationLayout } from "./InformationLayout";
 import Moves from "./Moves";
+import Navigation from "./Navigation";
 type Props = {};
 
 const Information = (props: Props) => {
   return (
-    <Routes>
-      <Route path="/" element={<InformationLayout />}>
-        <Route index element={<About />} />
+    <div className="flex flex-col relative -top-3 bg-black text-white  p-6 rounded-3xl overflow-hidden">
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<About />} />
         <Route path="stats" element={<Stats />} />
         <Route path="moves" element={<Moves />} />
         <Route path="*" element={<NotExist />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </div>
   );
 };
 

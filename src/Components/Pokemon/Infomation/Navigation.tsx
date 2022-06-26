@@ -21,7 +21,7 @@ const Navigation = (props: Props) => {
   const { id } = useParams();
 
   return (
-    <nav aria-labelledby="pokemon information" className="pb-4 ">
+    <nav aria-labelledby="pokemon information" className="pb-4 mb-4">
       <ul className="flex justify-between px-2 font-medium capitalize">
         {links.map(({ name, to }) => (
           <li key={name}>
@@ -30,7 +30,7 @@ const Navigation = (props: Props) => {
               className={({ isActive }) => {
                 return isActive ? "active-link pb-2" : "pb-2";
               }}
-              end={name === "About"}>
+              end>
               {name}
             </NavLink>
           </li>
