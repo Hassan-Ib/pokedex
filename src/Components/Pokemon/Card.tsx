@@ -14,12 +14,7 @@ const Card = () => {
   );
 
   return (
-    <section
-      className="p-6 pt-6 relative text-white"
-      style={{
-        // backgroundColor: randomColor.getColor(),
-        background: `radial-gradient(circle at 80%, #a34747 0% , transparent 80%)`,
-      }}>
+    <section className="p-6 pt-6 relative text-white card-radial-gradient">
       {/* header */}
       <Header id={data.id} />
       {/* image and name */}

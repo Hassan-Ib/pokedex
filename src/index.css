@@ -11,6 +11,26 @@
     background-size: cover;
   }
 } */
+@layer base {
+  meter {
+    @apply h-3;
+  }
+  @supports (-moz-appearance: none) {
+    /* meter {
+      width: 100%;
+      padding: 0;
+    }
+     */
+    meter::-moz-meter-bar {
+      border-radius: 6px;
+    }
+
+    meter {
+      border-radius: 6px;
+      height: 6px;
+    }
+  }
+}
 
 @layer utilities {
   .btn {
@@ -74,5 +94,8 @@
     bottom: 0;
     width: 50%;
     height: 2px;
+  }
+  .card-radial-gradient {
+    background: radial-gradient(circle at 80%, #a34747 0%, transparent 80%);
   }
 }

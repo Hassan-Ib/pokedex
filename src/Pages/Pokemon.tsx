@@ -29,7 +29,7 @@ const Pokemon = (props: Props) => {
   }
   // console.log(params);
   return (
-    <main className=" max-w-sm mx-auto border rounded-3xl overflow-hidden bg-black">
+    <main className=" max-w-[25rem] mx-auto border rounded-3xl overflow-hidden bg-black">
       <Card />
       <Information />
     </main>
