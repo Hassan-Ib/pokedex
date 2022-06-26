@@ -56,14 +56,14 @@ const StatMessure = ({ name, base_stat }: StatMessureProps) => {
     <div className="capitalize font-semibold grid grid-cols-5 gap-2 items-center ">
       <p className="opacity-70 ">{name}</p>
       <p>{base_stat}</p>
-      <div
+      {/* <div
         role="meter"
         aria-label={`${name} is `}
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={base_stat}>
         <div className=""></div>
-      </div>
+      </div> */}
       <meter
         min="0"
         max="100"
